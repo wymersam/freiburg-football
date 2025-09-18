@@ -4,40 +4,61 @@
   padding: 2rem;
   text-align: center;
 }
+.logo {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  border: 2px solid #1f2937;
+  margin-bottom: 2rem;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #213547;
+}
 
 .container {
   max-width: 700px;
   margin: 2rem auto;
-  background: white;
-  border-radius: 16px;
+  background: #ffffffff;;
   box-shadow: 0 4px 16px rgba(44, 62, 80, 0.1);
   padding: 2.5rem;
-  border: 1px solid white;
 }
 
 .controls {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-bottom: 2rem;
-  background: #08cb00;
-  border-radius: 8px;
-  padding: 1rem;
+  background: #f3f5f8ff;
+  border: 2px solid #1f2937;
+  padding: 1.2rem 1rem;
+  text-align: left;
 }
 .controls label {
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-width: 160px;
+  margin-bottom: 0.5rem;
+  justify-content: flex-start;
+  text-align: left;
 }
 .controls input,
 .controls select {
   padding: 0.4em 0.8em;
-  border-radius: 6px;
-  border: 1px solid #96f492ff;
   font-size: 1em;
-  background: #96f492ff;
-  color: black;
+  background: white;
+  color: #1f2937;
+  border: 2px solid #1f2937;
+}
+.controls input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
 }
 
 .pitch-list {
@@ -46,17 +67,16 @@
   margin: 0;
 }
 .pitch-item {
-  background: #08cb00;
-  border-radius: 10px;
+  background: #C71E64;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   text-align: left;
   transition: box-shadow 0.2s, border 0.2s;
-  border: 1px solid #96f492ff;
+  border: 2px solid #1f2937;
+  color: white;
 }
 .pitch-item:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-  border: 1.5px solid #08cb00;
 }
 .pitch-item h2 {
   margin: 0 0 0.5rem 0;
@@ -65,7 +85,6 @@
 .pitch-item p {
   margin: 0.3em 0;
   font-size: 1em;
-  color: #3b3c3bff;
 }
 
 .pitch-tags {
@@ -75,38 +94,51 @@
   margin-top: 0.5rem;
 }
 .pitch-tag {
-  background: #08cb00;
-  color: #fff;
-  border-radius: 4px;
   padding: 2px 8px;
   font-size: 0.95em;
-  font-weight: 500;
-  border: 1px solid #96f492ff;
-  box-shadow: 0 1px 2px rgba(44,62,80,0.08);
+  font-weight: 600;
+  border: 2px solid #1f2937;
+  box-shadow: 0 1px 2px rgba(44, 62, 80, 0.08);
+  color: #1f2937;
 }
 .tag-restaurant {
-  background: #ffb300;
-  border-color: #ffe082;
+  background: #f9f186ff;
 }
 .tag-outdoor {
-  background: #43a047;
-  border-color: #b2ff59;
+  background: #ec948cff;
 }
 .tag-indoor {
-  background: #039be5;
-  border-color: #80d8ff;
+  background: #96d4f3ff;
 }
 .tag-parking {
-  background: #8d6e63;
-  border-color: #d7ccc8;
+  background: #dfd7fbff;
 }
 .tag-lights {
-  background: #ab47bc;
-  border-color: #ce93d8;
+  background: #dd83edff;
 }
 .tag-turf {
-  background: #388e3c;
-  border-color: #a5d6a7;
+  background: #8df5f4ff;
+}
+.language-select-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.language-select {
+  font-size: 1.2em;
+  padding: 0 0.2rem;
+  border: none;
+  background: white;
+  color: #1f2937;
+}
+.checkbox-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 }
+.pitch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
 }

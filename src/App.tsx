@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import { useTranslation } from "react-i18next";
+import "./i18n";
 
 type Pitch = {
   id: number;
@@ -18,24 +20,24 @@ type Pitch = {
 const pitches: Pitch[] = [
   {
     id: 1,
-    name: "Dreisam Stadion",
-    location: "Waldkircher Str.",
-    rating: 4.8,
-    maxPlayers: 22,
+    name: "Sportpark-Umkirch",
+    location: "Umkirch",
+    rating: 5.0,
+    maxPlayers: 10,
     restaurant: true,
-    outdoor: true,
-    indoor: false,
+    outdoor: false,
+    indoor: true,
     parking: true,
     lights: true,
-    turf: true,
+    turf: false,
   },
   {
     id: 2,
-    name: "Seepark Pitch",
-    location: "Gerhart-Hauptmann-Str.",
-    rating: 4.2,
+    name: "ESV Freiburg",
+    location: "Sankt Georgen",
+    rating: 3.5,
     maxPlayers: 14,
-    restaurant: false,
+    restaurant: true,
     outdoor: true,
     indoor: false,
     parking: true,
@@ -44,35 +46,36 @@ const pitches: Pitch[] = [
   },
   {
     id: 3,
-    name: "Vauban Soccer Court",
-    location: "Vaubanallee",
-    rating: 4.5,
-    maxPlayers: 10,
+    name: "Seepark",
+    location: "Mooswald",
+    rating: 2,
+    maxPlayers: 14,
     restaurant: false,
     outdoor: true,
     indoor: false,
-    parking: false,
-    lights: true,
+    parking: true,
+    lights: false,
     turf: true,
   },
   {
     id: 4,
-    name: "Stühlinger Park",
-    location: "Wentzingerstr.",
-    rating: 4.0,
-    maxPlayers: 12,
+    name: "PSV Freiburg",
+    location: "Sankt Georgen",
+    rating: 5,
+    maxPlayers: 14,
     restaurant: true,
-    outdoor: false,
-    indoor: true,
+    outdoor: true,
+    indoor: false,
     parking: true,
     lights: true,
-    turf: false,
+    turf: true,
   },
 ];
 
 type SortKey = "rating" | "location" | "maxPlayers";
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [sortKey, setSortKey] = useState<SortKey>("rating");
   const [filterLocation, setFilterLocation] = useState("");
   const [filters, setFilters] = useState({
@@ -83,6 +86,12 @@ function App() {
     lights: false,
     turf: false,
   });
+  const [language, setLanguage] = useState(i18n.language);
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(e.target.value);
+    setLanguage(e.target.value);
+  };
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
@@ -110,26 +119,49 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Freiburg Football Pitches</h1>
+      <div className="language-select-container">
+        <label>
+          Language:
+          <select
+            value={language}
+            onChange={handleLanguageChange}
+            className="language-select"
+          >
+            <option value="en">🇬🇧</option>
+            <option value="de">🇩🇪</option>
+            <option value="es">🇪🇸</option>
+            <option value="it">🇮🇹</option>
+            <option value="ar">🇸🇦</option>
+          </select>
+        </label>
+      </div>
+      <div
+        className="logo-container"
+        style={{ marginBottom: "1.5rem", textAlign: "center" }}
+      >
+        <img src="/logo.png" alt="Football Freiburg Logo" className="logo" />
+        <h1 className="app-title">{t("appHeadline")}</h1>
+      </div>
+
       <div className="controls">
         <label>
-          Sort by:
+          {t("sortBy")}
           <select
             value={sortKey}
             onChange={(e) => setSortKey(e.target.value as SortKey)}
           >
-            <option value="rating">Rating</option>
-            <option value="location">Location</option>
-            <option value="maxPlayers">Max Players</option>
+            <option value="rating">{t("rating")}</option>
+            <option value="location">{t("location")}</option>
+            <option value="maxPlayers">{t("maxPlayers")}</option>
           </select>
         </label>
         <label>
-          Filter by location:
+          {t("filterByLocation")}
           <select
             value={filterLocation}
             onChange={(e) => setFilterLocation(e.target.value)}
           >
-            <option value="">All</option>
+            <option value="">{t("all")}</option>
             <option value="Wiehre">Wiehre</option>
             <option value="Sankt Georgen">Sankt Georgen</option>
             <option value="Vauban">Vauban</option>
@@ -137,14 +169,7 @@ function App() {
             <option value="Umkirch">Umkirch</option>
           </select>
         </label>
-        <div
-          style={{
-            display: "flex",
-            gap: "1rem",
-            flexWrap: "wrap",
-            alignItems: "center",
-          }}
-        >
+        <div className="checkbox-filters">
           <label>
             <input
               type="checkbox"
@@ -152,7 +177,7 @@ function App() {
               checked={filters.restaurant}
               onChange={handleFilterChange}
             />{" "}
-            Restaurant
+            {t("restaurant")}
           </label>
           <label>
             <input
@@ -161,7 +186,7 @@ function App() {
               checked={filters.outdoor}
               onChange={handleFilterChange}
             />{" "}
-            Outdoor
+            {t("outdoor")}
           </label>
           <label>
             <input
@@ -170,7 +195,7 @@ function App() {
               checked={filters.indoor}
               onChange={handleFilterChange}
             />{" "}
-            Indoor
+            {t("indoor")}
           </label>
           <label>
             <input
@@ -179,7 +204,7 @@ function App() {
               checked={filters.parking}
               onChange={handleFilterChange}
             />{" "}
-            Parking
+            {t("parking")}
           </label>
           <label>
             <input
@@ -188,7 +213,7 @@ function App() {
               checked={filters.lights}
               onChange={handleFilterChange}
             />{" "}
-            Lights
+            {t("lights")}
           </label>
           <label>
             <input
@@ -197,7 +222,7 @@ function App() {
               checked={filters.turf}
               onChange={handleFilterChange}
             />{" "}
-            Turf
+            {t("turf")}
           </label>
         </div>
       </div>
@@ -206,38 +231,35 @@ function App() {
           <li key={pitch.id} className="pitch-item">
             <h2>{pitch.name}</h2>
             <p>
-              <strong>Location:</strong> {pitch.location}
+              <strong>{t("location")}:</strong> {pitch.location}
             </p>
             <p>
-              <strong>Rating:</strong> {pitch.rating}
+              <strong>{t("rating")}:</strong> {pitch.rating}
             </p>
             <p>
-              <strong>Max Players:</strong> {pitch.maxPlayers}
+              <strong>{t("maxPlayers")}:</strong> {pitch.maxPlayers}
             </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "0.5rem",
-                flexWrap: "wrap",
-                marginTop: "0.5rem",
-              }}
-            >
+            <div className="pitch-tags">
               {pitch.restaurant && (
-                <span className="pitch-tag tag-restaurant">Restaurant</span>
+                <span className="pitch-tag tag-restaurant">
+                  {t("restaurant")}
+                </span>
               )}
               {pitch.outdoor && (
-                <span className="pitch-tag tag-outdoor">Outdoor</span>
+                <span className="pitch-tag tag-outdoor">{t("outdoor")}</span>
               )}
               {pitch.indoor && (
-                <span className="pitch-tag tag-indoor">Indoor</span>
+                <span className="pitch-tag tag-indoor">{t("indoor")}</span>
               )}
               {pitch.parking && (
-                <span className="pitch-tag tag-parking">Parking</span>
+                <span className="pitch-tag tag-parking">{t("parking")}</span>
               )}
               {pitch.lights && (
-                <span className="pitch-tag tag-lights">Lights</span>
+                <span className="pitch-tag tag-lights">{t("lights")}</span>
               )}
-              {pitch.turf && <span className="pitch-tag tag-turf">Turf</span>}
+              {pitch.turf && (
+                <span className="pitch-tag tag-turf">{t("turf")}</span>
+              )}
             </div>
           </li>
         ))}
