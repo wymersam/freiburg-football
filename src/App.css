@@ -1,0 +1,112 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.1);
+  padding: 2.5rem;
+  border: 1px solid white;
+}
+
+.controls {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: #08cb00;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.controls label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.controls input,
+.controls select {
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  border: 1px solid #96f492ff;
+  font-size: 1em;
+  background: #96f492ff;
+  color: black;
+}
+
+.pitch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pitch-item {
+  background: #08cb00;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  text-align: left;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 1px solid #96f492ff;
+}
+.pitch-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  border: 1.5px solid #08cb00;
+}
+.pitch-item h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3em;
+}
+.pitch-item p {
+  margin: 0.3em 0;
+  font-size: 1em;
+  color: #3b3c3bff;
+}
+
+.pitch-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.pitch-tag {
+  background: #08cb00;
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.95em;
+  font-weight: 500;
+  border: 1px solid #96f492ff;
+  box-shadow: 0 1px 2px rgba(44,62,80,0.08);
+}
+.tag-restaurant {
+  background: #ffb300;
+  border-color: #ffe082;
+}
+.tag-outdoor {
+  background: #43a047;
+  border-color: #b2ff59;
+}
+.tag-indoor {
+  background: #039be5;
+  border-color: #80d8ff;
+}
+.tag-parking {
+  background: #8d6e63;
+  border-color: #d7ccc8;
+}
+.tag-lights {
+  background: #ab47bc;
+  border-color: #ce93d8;
+}
+.tag-turf {
+  background: #388e3c;
+  border-color: #a5d6a7;
+}
+}
+}
