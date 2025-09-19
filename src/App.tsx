@@ -117,6 +117,21 @@ function App() {
       return b[sortKey] > a[sortKey] ? 1 : -1;
     });
 
+  function RatingCircles({ value }: { value: number }) {
+    // value: 0-5, can be .5 steps
+    const circles = [];
+    for (let i = 1; i <= 5; i++) {
+      if (value >= i) {
+        circles.push(<span key={i} className="rating-circle full" />);
+      } else if (value >= i - 0.5) {
+        circles.push(<span key={i} className="rating-circle half" />);
+      } else {
+        circles.push(<span key={i} className="rating-circle empty" />);
+      }
+    }
+    return <span className="rating-circles">{circles}</span>;
+  }
+
   return (
     <div className="container">
       <div className="language-select-container">
@@ -144,31 +159,33 @@ function App() {
       </div>
 
       <div className="controls">
-        <label>
-          {t("sortBy")}
-          <select
-            value={sortKey}
-            onChange={(e) => setSortKey(e.target.value as SortKey)}
-          >
-            <option value="rating">{t("rating")}</option>
-            <option value="location">{t("location")}</option>
-            <option value="maxPlayers">{t("maxPlayers")}</option>
-          </select>
-        </label>
-        <label>
-          {t("filterByLocation")}
-          <select
-            value={filterLocation}
-            onChange={(e) => setFilterLocation(e.target.value)}
-          >
-            <option value="">{t("all")}</option>
-            <option value="Wiehre">Wiehre</option>
-            <option value="Sankt Georgen">Sankt Georgen</option>
-            <option value="Vauban">Vauban</option>
-            <option value="Mooswald">Mooswald</option>
-            <option value="Umkirch">Umkirch</option>
-          </select>
-        </label>
+        <div className="dropdown-filters">
+          <label>
+            {t("sortBy")}
+            <select
+              value={sortKey}
+              onChange={(e) => setSortKey(e.target.value as SortKey)}
+            >
+              <option value="rating">{t("rating")}</option>
+              <option value="location">{t("location")}</option>
+              <option value="maxPlayers">{t("maxPlayers")}</option>
+            </select>
+          </label>
+          <label>
+            {t("filterByLocation")}
+            <select
+              value={filterLocation}
+              onChange={(e) => setFilterLocation(e.target.value)}
+            >
+              <option value="">{t("all")}</option>
+              <option value="Wiehre">Wiehre</option>
+              <option value="Sankt Georgen">Sankt Georgen</option>
+              <option value="Vauban">Vauban</option>
+              <option value="Mooswald">Mooswald</option>
+              <option value="Umkirch">Umkirch</option>
+            </select>
+          </label>
+        </div>
         <div className="checkbox-filters">
           <label>
             <input
@@ -234,7 +251,8 @@ function App() {
               <strong>{t("location")}:</strong> {pitch.location}
             </p>
             <p>
-              <strong>{t("rating")}:</strong> {pitch.rating}
+              <strong>{t("rating")}:</strong>{" "}
+              <RatingCircles value={pitch.rating} />
             </p>
             <p>
               <strong>{t("maxPlayers")}:</strong> {pitch.maxPlayers}
