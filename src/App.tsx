@@ -139,158 +139,156 @@ function App() {
 
   return (
     <div className="container">
-      <div className="language-select-container">
-        <label>
-          Language:
-          <select
-            value={language}
-            onChange={handleLanguageChange}
-            className="language-select"
-          >
-            <option value="en">🇬🇧</option>
-            <option value="de">🇩🇪</option>
-            <option value="es">🇪🇸</option>
-            <option value="it">🇮🇹</option>
-            <option value="ar">🇸🇦</option>
-          </select>
-        </label>
-      </div>
-      <div
-        className="logo-container"
-        style={{ marginBottom: "1.5rem", textAlign: "center" }}
-      >
+      <div className="logo-container">
         <img src="/logo.png" alt="Football Freiburg Logo" className="logo" />
         <h1 className="app-title">{t("appHeadline")}</h1>
-      </div>
-
-      <div className="controls">
-        <div className="dropdown-filters">
+        <div className="language-select-container">
           <label>
-            {t("sortBy")}
             <select
-              value={sortKey}
-              onChange={(e) => setSortKey(e.target.value as SortKey)}
+              value={language}
+              onChange={handleLanguageChange}
+              className="language-select"
             >
-              <option value="rating">{t("rating")}</option>
-              <option value="location">{t("location")}</option>
-              <option value="maxPlayers">{t("maxPlayers")}</option>
-              <option value="price">Price</option>
+              <option value="en">🇬🇧</option>
+              <option value="de">🇩🇪</option>
+              <option value="es">🇪🇸</option>
+              <option value="it">🇮🇹</option>
+              <option value="ar">🇸🇦</option>
             </select>
-          </label>
-          <label>
-            {t("filterByLocation")}
-            <select
-              value={filterLocation}
-              onChange={(e) => setFilterLocation(e.target.value)}
-            >
-              <option value="">{t("all")}</option>
-              <option value="Wiehre">Wiehre</option>
-              <option value="Sankt Georgen">Sankt Georgen</option>
-              <option value="Vauban">Vauban</option>
-              <option value="Mooswald">Mooswald</option>
-              <option value="Umkirch">Umkirch</option>
-            </select>
-          </label>
-        </div>
-        <div className="checkbox-filters">
-          <label>
-            <input
-              type="checkbox"
-              name="restaurant"
-              checked={filters.restaurant}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("restaurant")}
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="outdoor"
-              checked={filters.outdoor}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("outdoor")}
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="indoor"
-              checked={filters.indoor}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("indoor")}
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="parking"
-              checked={filters.parking}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("parking")}
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="lights"
-              checked={filters.lights}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("lights")}
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="turf"
-              checked={filters.turf}
-              onChange={handleFilterChange}
-            />{" "}
-            {t("turf")}
           </label>
         </div>
       </div>
-      <ul className="pitch-list">
-        {sortedPitches.map((pitch) => (
-          <li key={pitch.id} className="pitch-item">
-            <h2>{pitch.name}</h2>
-            <p>
-              <strong>{t("location")}:</strong> {pitch.location}
-            </p>
-            <p>
-              <strong>{t("rating")}:</strong>{" "}
-              <RatingCircles value={pitch.rating} />
-            </p>
-            <p>
-              <strong>{t("maxPlayers")}:</strong> {pitch.maxPlayers}
-            </p>
-            <p>
-              <strong>{t("price")} :</strong> {pitch.price}
-            </p>
-            <div className="pitch-tags">
-              {pitch.restaurant && (
-                <span className="pitch-tag tag-restaurant">
-                  {t("restaurant")}
-                </span>
-              )}
-              {pitch.outdoor && (
-                <span className="pitch-tag tag-outdoor">{t("outdoor")}</span>
-              )}
-              {pitch.indoor && (
-                <span className="pitch-tag tag-indoor">{t("indoor")}</span>
-              )}
-              {pitch.parking && (
-                <span className="pitch-tag tag-parking">{t("parking")}</span>
-              )}
-              {pitch.lights && (
-                <span className="pitch-tag tag-lights">{t("lights")}</span>
-              )}
-              {pitch.turf && (
-                <span className="pitch-tag tag-turf">{t("turf")}</span>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+
+      <div className="app-main">
+        <div className="controls">
+          <div className="dropdown-filters">
+            <label>
+              {t("sortBy")}
+              <select
+                value={sortKey}
+                onChange={(e) => setSortKey(e.target.value as SortKey)}
+              >
+                <option value="rating">{t("rating")}</option>
+                <option value="location">{t("location")}</option>
+                <option value="maxPlayers">{t("maxPlayers")}</option>
+                <option value="price">Price</option>
+              </select>
+            </label>
+            <label>
+              {t("filterByLocation")}
+              <select
+                value={filterLocation}
+                onChange={(e) => setFilterLocation(e.target.value)}
+              >
+                <option value="">{t("all")}</option>
+                <option value="Wiehre">Wiehre</option>
+                <option value="Sankt Georgen">Sankt Georgen</option>
+                <option value="Vauban">Vauban</option>
+                <option value="Mooswald">Mooswald</option>
+                <option value="Umkirch">Umkirch</option>
+              </select>
+            </label>
+          </div>
+          <div className="checkbox-filters">
+            <label>
+              <input
+                type="checkbox"
+                name="restaurant"
+                checked={filters.restaurant}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("restaurant")}
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="outdoor"
+                checked={filters.outdoor}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("outdoor")}
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="indoor"
+                checked={filters.indoor}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("indoor")}
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="parking"
+                checked={filters.parking}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("parking")}
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="lights"
+                checked={filters.lights}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("lights")}
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="turf"
+                checked={filters.turf}
+                onChange={handleFilterChange}
+              />{" "}
+              {t("turf")}
+            </label>
+          </div>
+        </div>
+        <ul className="pitch-list">
+          {sortedPitches.map((pitch) => (
+            <li key={pitch.id} className="pitch-item">
+              <h2>{pitch.name}</h2>
+              <p>
+                <strong>{t("location")}:</strong> {pitch.location}
+              </p>
+              <p>
+                <strong>{t("rating")}:</strong>{" "}
+                <RatingCircles value={pitch.rating} />
+              </p>
+              <p>
+                <strong>{t("maxPlayers")}:</strong> {pitch.maxPlayers}
+              </p>
+              <p>
+                <strong>{t("price")} :</strong> {pitch.price}
+              </p>
+              <div className="pitch-tags">
+                {pitch.restaurant && (
+                  <span className="pitch-tag tag-restaurant">
+                    {t("restaurant")}
+                  </span>
+                )}
+                {pitch.outdoor && (
+                  <span className="pitch-tag tag-outdoor">{t("outdoor")}</span>
+                )}
+                {pitch.indoor && (
+                  <span className="pitch-tag tag-indoor">{t("indoor")}</span>
+                )}
+                {pitch.parking && (
+                  <span className="pitch-tag tag-parking">{t("parking")}</span>
+                )}
+                {pitch.lights && (
+                  <span className="pitch-tag tag-lights">{t("lights")}</span>
+                )}
+                {pitch.turf && (
+                  <span className="pitch-tag tag-turf">{t("turf")}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
