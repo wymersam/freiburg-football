@@ -9,6 +9,7 @@ type Pitch = {
   location: string;
   rating: number;
   maxPlayers: number;
+  price: string;
   restaurant?: boolean;
   outdoor?: boolean;
   indoor?: boolean;
@@ -24,6 +25,7 @@ const pitches: Pitch[] = [
     location: "Umkirch",
     rating: 5.0,
     maxPlayers: 10,
+    price: "$$$",
     restaurant: true,
     outdoor: false,
     indoor: true,
@@ -37,6 +39,7 @@ const pitches: Pitch[] = [
     location: "Sankt Georgen",
     rating: 3.5,
     maxPlayers: 14,
+    price: "$",
     restaurant: true,
     outdoor: true,
     indoor: false,
@@ -50,6 +53,7 @@ const pitches: Pitch[] = [
     location: "Mooswald",
     rating: 2,
     maxPlayers: 14,
+    price: "Free",
     restaurant: false,
     outdoor: true,
     indoor: false,
@@ -63,6 +67,7 @@ const pitches: Pitch[] = [
     location: "Sankt Georgen",
     rating: 5,
     maxPlayers: 14,
+    price: "$$",
     restaurant: true,
     outdoor: true,
     indoor: false,
@@ -72,7 +77,7 @@ const pitches: Pitch[] = [
   },
 ];
 
-type SortKey = "rating" | "location" | "maxPlayers";
+type SortKey = "rating" | "location" | "maxPlayers" | "price";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -169,6 +174,7 @@ function App() {
               <option value="rating">{t("rating")}</option>
               <option value="location">{t("location")}</option>
               <option value="maxPlayers">{t("maxPlayers")}</option>
+              <option value="price">Price</option>
             </select>
           </label>
           <label>
@@ -256,6 +262,9 @@ function App() {
             </p>
             <p>
               <strong>{t("maxPlayers")}:</strong> {pitch.maxPlayers}
+            </p>
+            <p>
+              <strong>{t("price")} :</strong> {pitch.price}
             </p>
             <div className="pitch-tags">
               {pitch.restaurant && (
