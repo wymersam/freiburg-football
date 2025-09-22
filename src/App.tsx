@@ -79,9 +79,7 @@ function App() {
           {windowWidth < 720 ? (
             <CheckboxFiltersMobile
               filters={filters}
-              onChange={(key: string, value: boolean) => {
-                setFilters((prev) => ({ ...prev, [key]: value }));
-              }}
+              onChange={handleFilterChange}
             />
           ) : (
             <CheckboxFilters filters={filters} onChange={handleFilterChange} />

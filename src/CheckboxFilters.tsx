@@ -1,20 +1,23 @@
 import type { CheckboxFiltersProps } from "./types";
+import { useTranslation } from "react-i18next";
 
 export default function CheckboxFilters({
   filters,
   onChange,
 }: CheckboxFiltersProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="checkbox-filters">
-      {Object.entries(filters).map(([key, checked]) => (
+      {Object.entries(filters).map(([key, value]) => (
         <label key={key}>
           <input
             type="checkbox"
-            name={key}
-            checked={checked}
+            checked={value}
             onChange={onChange}
+            name={key}
           />
-          {key}
+          {t(key)}
         </label>
       ))}
     </div>

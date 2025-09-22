@@ -4,23 +4,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
   background: #f5f7fa;
   color: #1f2937;
 }
 
 /* Root */
 #root {
-  max-width: 100vw;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app-main {
+  min-height: 75vh;
   background: #e8e8e5ff;
   box-sizing: border-box;
   padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
 /* Logo + Title */
 .logo {
   height: 70px;
@@ -31,10 +36,15 @@ body {
 }
 
 .header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
   padding: 1rem;
-  text-align: left;
   display: flex;
   gap: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .app-title {
@@ -113,6 +123,9 @@ body {
   cursor: pointer;
   user-select: none;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 .filter-toggle-chevron:hover {
   color: black;
@@ -142,6 +155,7 @@ body {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: flex-start;
+  transition: max-height 0.3s ease;
 }
 
 /* Pitch List */
@@ -237,6 +251,14 @@ body {
   background: #d1d5db;
 }
 
+footer {
+  width: 100%;
+  color: #374151;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
 /* Responsive (tablet + desktop) */
 @media (min-width: 600px) {
   #root {
@@ -255,13 +277,16 @@ body {
     display: block;
   }
 
+  .app-main {
+    min-height: 0;
+  }
+
   .app-title {
     font-size: 2.4rem;
   }
 
   .container {
     max-width: 700px;
-    margin: 2rem auto;
     padding: 2.5rem;
     border-radius: 18px;
   }
@@ -295,7 +320,8 @@ body {
   .language-select {
     font-size: 1.1em;
     position: absolute;
-    top: 80px;
+    top: 20px;
+    right: 10px;
   }
 
   .checkbox-filters {
