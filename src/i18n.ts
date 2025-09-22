@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       title: "FreiKick",
-      appHeadline: "Freiburg’s Football Field Finder",
+      appHeadline: "Find your football field in Freiburg",
       sortBy: "Sort by:",
       filterByLocation: "Filter by location:",
       all: "All",
@@ -19,12 +19,14 @@ const resources = {
       parking: "Parking",
       lights: "Lights",
       turf: "Turf",
+      showFilters: "Show Filters",
+      hideFilters: "Hide Filters",
     },
   },
   de: {
     translation: {
       title: "FreiKick",
-      appHeadline: "Freiburgs Fußballplatz-Finder",
+      appHeadline: "Finde deinen Fußballplatz in Freiburg",
       sortBy: "Sortieren nach:",
       filterByLocation: "Filtern nach Stadtteil:",
       all: "Alle",
@@ -38,12 +40,14 @@ const resources = {
       parking: "Parkplatz",
       lights: "Beleuchtung",
       turf: "Kunstrasen",
+      showFilters: "Filter anzeigen",
+      hideFilters: "Filter verbergen",
     },
   },
   es: {
     translation: {
       title: "FreiKick",
-      appHeadline: "Buscador de campos de fútbol de Friburgo",
+      appHeadline: "Encuentra tu campo de fútbol en Friburgo",
       sortBy: "Ordenar por:",
       filterByLocation: "Filtrar por barrio:",
       all: "Todos",
@@ -57,12 +61,14 @@ const resources = {
       parking: "Aparcamiento",
       lights: "Luces",
       turf: "Césped artificial",
+      showFilters: "Mostrar filtros",
+      hideFilters: "Ocultar filtros",
     },
   },
   it: {
     translation: {
       title: "FreiKick",
-      appHeadline: "Trova campi da calcio a Friburgo",
+      appHeadline: "Trova il tuo campo da calcio a Friburgo",
       sortBy: "Ordina per:",
       filterByLocation: "Filtra per quartiere:",
       all: "Tutti",
@@ -76,12 +82,14 @@ const resources = {
       parking: "Parcheggio",
       lights: "Luci",
       turf: "Erba sintetica",
+      showFilters: "Mostra filtri",
+      hideFilters: "Nascondi filtri",
     },
   },
   ar: {
     translation: {
       title: "فرايكك",
-      appHeadline: "الباحث عن ملاعب كرة القدم في فرايبورغ",
+      appHeadline: "ابحث عن ملعب كرة القدم في فرايبورغ",
       sortBy: "ترتيب حسب:",
       filterByLocation: "تصفية حسب الموقع:",
       all: "الكل",
@@ -95,6 +103,8 @@ const resources = {
       parking: "موقف سيارات",
       lights: "إضاءة",
       turf: "عشب صناعي",
+      showFilters: "إظهار الفلاتر",
+      hideFilters: "إخفاء الفلاتر",
     },
   },
 };
