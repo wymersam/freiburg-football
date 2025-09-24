@@ -1,0 +1,131 @@
+/* Mobile-first styles */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+  color: #1f2937;
+}
+
+/* Root */
+#root {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  min-height: 75vh;
+  background: #e8e8e5ff;
+  box-sizing: border-box;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo + Title */
+.logo {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid grey;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.app-title {
+  font-family: "Schoolbell", cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 0.3rem;
+  color: #111827;
+  letter-spacing: 0.4px;
+  align-self: end;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  transition: transform 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+}
+
+/* Language Select */
+.language-select-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.language-select {
+  font-size: 1em;
+  border: none;
+}
+
+footer {
+  width: 100%;
+  color: #374151;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive (tablet + desktop) */
+@media (min-width: 600px) {
+  #root {
+    max-width: 1280px;
+    padding: 2rem;
+  }
+
+  .logo {
+    height: 140px;
+    width: 140px;
+    margin-bottom: 2rem;
+  }
+
+  .header-container {
+    text-align: center;
+    display: block;
+  }
+
+  .app-main {
+    min-height: 0;
+  }
+
+  .app-title {
+    font-size: 2.4rem;
+  }
+
+  .container {
+    max-width: 700px;
+    padding: 2.5rem;
+    border-radius: 18px;
+  }
+
+  .language-select {
+    font-size: 1.1em;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+}

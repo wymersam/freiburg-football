@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { useTranslation } from "react-i18next";
 import "./i18n";
-import LanguageSelector from "./LanguageSelector";
-import CheckboxFilters from "./CheckboxFilters";
+import LanguageSelector from "./components/LanguageSelector";
+import CheckboxFilters from "./components/CheckboxFilters";
 import type { Filters, Pitch, SortKey } from "./types";
 import { pitches } from "./pitches";
-import PitchCard from "./PitchCard";
-import DropdownFilters from "./DropdownFilters";
-import Footer from "./Footer";
-import CheckboxFiltersMobile from "./CheckboxFiltersMobile";
+import PitchCard from "./components/PitchCard";
+import DropdownFilters from "./components/DropdownFilters";
+import Footer from "./components/Footer";
+import CheckboxFiltersMobile from "./components/CheckboxFiltersMobile";
 
 function App() {
   const { t } = useTranslation();

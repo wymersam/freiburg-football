@@ -1,0 +1,122 @@
+.pitch-item {
+  display: flex;
+}
+
+.pitch-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pitch-item {
+  background: #ffffff;
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.pitch-item:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.pitch-item h2 {
+  font-family: "Schoolbell", cursive;
+  margin: 0 0 0.4rem 0;
+  font-size: 1.2em;
+}
+
+.pitch-item p {
+  margin: 0.3em 0;
+  font-size: 0.95em;
+  color: #374151;
+}
+
+/* Pitch Tags */
+.pitch-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pitch-tag {
+  padding: 3px 10px;
+  font-size: 0.9em;
+  border-radius: 6px;
+  border: 1px solid #283041ff;
+  color: #111827;
+}
+
+.tag-restaurant {
+  background: #fde68a;
+}
+.tag-outdoor {
+  background: #fca5a5;
+}
+.tag-indoor {
+  background: #93c5fd;
+}
+.tag-parking {
+  background: #d8b4fe;
+}
+.tag-lights {
+  background: #f9a8d4;
+}
+.tag-turf {
+  background: #6ee7b7;
+}
+
+/* Ratings */
+.rating-circles {
+  display: inline-flex;
+  gap: 4px;
+  vertical-align: middle;
+}
+
+.rating-circle {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #d1d5db;
+}
+
+.rating-circle.full {
+  background: #fbbf24;
+}
+.rating-circle.half {
+  background: linear-gradient(90deg, #fbbf24 50%, #d1d5db 50%);
+}
+.rating-circle.empty {
+  background: #d1d5db;
+}
+
+@media (min-width: 600px) {
+  .pitch-item {
+    padding: 1.5rem;
+    font-size: 1em;
+  }
+
+  .pitch-tags {
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  .pitch-tag {
+    font-size: 0.95em;
+    padding: 4px 10px;
+  }
+
+  .pitch-card-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: auto;
+    justify-self: right;
+  }
+}

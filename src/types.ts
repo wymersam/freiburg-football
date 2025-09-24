@@ -5,12 +5,20 @@ export type Pitch = {
   rating: number;
   maxPlayers: number;
   price: string;
+  imageUrl: string;
+  infoUrl: string;
   restaurant?: boolean;
   outdoor?: boolean;
   indoor?: boolean;
   parking?: boolean;
   lights?: boolean;
   turf?: boolean;
+  moreInfo?: PitchInformation;
+};
+
+export type PitchInformation = {
+  oneHourSessionPrice?: string;
+  twoHourSessionPrice?: string;
 };
 
 export type Filters = {

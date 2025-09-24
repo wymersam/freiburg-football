@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { CheckboxFiltersProps } from "./types";
+import type { CheckboxFiltersProps } from "../types";
 import { useTranslation } from "react-i18next";
 import ChevronIcon from "./ChevronIcon";
 import CheckboxFilters from "./CheckboxFilters";

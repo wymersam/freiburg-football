@@ -14,6 +14,12 @@ export const pitches: Pitch[] = [
     parking: true,
     lights: true,
     turf: false,
+    imageUrl: "./umkirch-logo.png",
+    infoUrl: "https://black-forest-freizeit.de/soccer/",
+    moreInfo: {
+      oneHourSessionPrice: "82 Euro",
+      twoHourSessionPrice: "164 Euro",
+    },
   },
   {
     id: 2,
@@ -28,6 +34,12 @@ export const pitches: Pitch[] = [
     parking: true,
     lights: false,
     turf: false,
+    imageUrl: "./umkirch-logo.png",
+    infoUrl: "",
+    moreInfo: {
+      oneHourSessionPrice: "82 Euro",
+      twoHourSessionPrice: "164 Euro",
+    },
   },
   {
     id: 3,
@@ -42,6 +54,11 @@ export const pitches: Pitch[] = [
     parking: true,
     lights: false,
     turf: true,
+    imageUrl: "./umkirch-logo.png",
+    infoUrl: "",
+    moreInfo: {
+      oneHourSessionPrice: "Free",
+    },
   },
   {
     id: 4,
@@ -56,5 +73,11 @@ export const pitches: Pitch[] = [
     parking: true,
     lights: true,
     turf: true,
+    imageUrl: "./umkirch-logo.png",
+    infoUrl: "",
+    moreInfo: {
+      oneHourSessionPrice: "82 Euro",
+      twoHourSessionPrice: "164 Euro",
+    },
   },
 ];

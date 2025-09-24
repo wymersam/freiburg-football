@@ -1,5 +1,6 @@
-import type { CheckboxFiltersProps } from "./types";
+import type { CheckboxFiltersProps } from "../types";
 import { useTranslation } from "react-i18next";
+import "../styles/filters.css";
 
 export default function CheckboxFilters({
   filters,

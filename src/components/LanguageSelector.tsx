@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import i18n from "./i18n";
+import i18n from "../i18n";
 
 function LanguageSelector() {
   const [language, setLanguage] = useState(i18n.language);

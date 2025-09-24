@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import type { DropDownFiltersProps, SortKey } from "./types";
+import type { DropDownFiltersProps, SortKey } from "../types";
 
 const sortOptions: { value: SortKey; label: string }[] = [
   { value: "rating", label: t("rating") },

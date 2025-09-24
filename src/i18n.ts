@@ -21,6 +21,9 @@ const resources = {
       turf: "Turf",
       showFilters: "Show Filters",
       hideFilters: "Hide Filters",
+      moreInfo: "More Info",
+      oneHourSession: "One Hour Session",
+      twoHourSession: "Two Hour Session",
     },
   },
   de: {
@@ -42,6 +45,9 @@ const resources = {
       turf: "Kunstrasen",
       showFilters: "Filter anzeigen",
       hideFilters: "Filter verbergen",
+      moreInfo: "Mehr Infos",
+      oneHourSession: "Eine Stunde",
+      twoHourSession: "Zwei Stunden",
     },
   },
   es: {
@@ -63,6 +69,9 @@ const resources = {
       turf: "Césped artificial",
       showFilters: "Mostrar filtros",
       hideFilters: "Ocultar filtros",
+      moreInfo: "Más información",
+      oneHourSession: "Una hora",
+      twoHourSession: "Dos horas",
     },
   },
   it: {
@@ -84,6 +93,9 @@ const resources = {
       turf: "Erba sintetica",
       showFilters: "Mostra filtri",
       hideFilters: "Nascondi filtri",
+      moreInfo: "Maggiori info",
+      oneHourSession: "Un'ora",
+      twoHourSession: "Due ore",
     },
   },
   ar: {
@@ -105,6 +117,9 @@ const resources = {
       turf: "عشب صناعي",
       showFilters: "إظهار الفلاتر",
       hideFilters: "إخفاء الفلاتر",
+      moreInfo: "مزيد من المعلومات",
+      oneHourSession: "جلسة ساعة واحدة",
+      twoHourSession: "جلسة ساعتين",
     },
   },
 };
