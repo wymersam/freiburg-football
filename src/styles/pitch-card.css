@@ -1,5 +1,24 @@
 .pitch-item {
   display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  margin-bottom: 1rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0; /* Remove padding from the main item */
+}
+
+.pitch-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pitch-description {
+  padding: 1rem;
 }
 
 .pitch-list {
@@ -8,18 +27,9 @@
   margin: 0;
 }
 
-.pitch-item {
-  background: #ffffff;
-  margin-bottom: 1rem;
-  padding: 1.2rem;
-  text-align: left;
-  transition: all 0.2s ease;
-  border-radius: 12px;
-}
-
 .pitch-item:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .pitch-item h2 {
@@ -35,7 +45,12 @@
 }
 
 .pitch-image-container {
-  display: none;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  order: 2;
+  margin: 0;
+  background: firebrick;
 }
 
 /* Pitch Tags */
@@ -53,6 +68,14 @@
   border-radius: 6px;
   border: 1px solid #283041ff;
   color: #111827;
+}
+
+.pitch-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .tag-restaurant {
@@ -101,8 +124,8 @@
 
 @media (min-width: 600px) {
   .pitch-item {
-    padding: 1.5rem;
-    font-size: 1em;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
   }
 
   .pitch-tags {
@@ -116,15 +139,10 @@
   }
 
   .pitch-card-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-left: auto;
-    justify-self: right;
+    object-fit: contain;
   }
 
   .pitch-image-container {
-    display: block;
+    height: 250px; /* Slightly taller on desktop */
   }
 }

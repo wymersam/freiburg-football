@@ -244,15 +244,13 @@ export default function PitchCard({ pitch }: { pitch: Pitch }) {
           {moreInfoOpen && pitch.moreInfo && <MoreInfo info={pitch.moreInfo} />}
         </div>
 
-        {!isMobile && (
-          <div className="pitch-image-container">
-            <img
-              src={pitch.imageUrl}
-              alt={pitch.name}
-              className="pitch-card-image"
-            />
-          </div>
-        )}
+        <div className="pitch-image-container">
+          <img
+            src={pitch.imageUrl}
+            alt={pitch.name}
+            className="pitch-card-image"
+          />
+        </div>
       </li>
     </div>
   );
