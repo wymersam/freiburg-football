@@ -45,7 +45,6 @@
   font-weight: 600;
   color: #1f2937;
   padding: 0.5em 0;
-  margin-bottom: 0.5rem;
   cursor: pointer;
   user-select: none;
   transition: color 0.2s;
@@ -61,6 +60,7 @@
 .dropdown-filters {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Checkbox Filters */

@@ -12,6 +12,14 @@ export default function MoreInfo({ info }: { info: PitchInformation }) {
           <span>{t("twoHourSession")}:</span> {info.twoHourSessionPrice}
         </p>
       )}
+      {info.website && (
+        <p>
+          {t("website")}:{" "}
+          <a href={info.website} rel="noopener noreferrer" target="_blank">
+            {info.website}
+          </a>
+        </p>
+      )}
     </div>
   );
 }

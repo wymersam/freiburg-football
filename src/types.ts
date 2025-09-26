@@ -1,24 +1,39 @@
-export type Pitch = {
+export interface Review {
+  id: string;
+  userId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: Date;
+}
+
+export interface Pitch {
   id: number;
   name: string;
   location: string;
   rating: number;
+  baseRating?: number;
   maxPlayers: number;
   price: string;
+  restaurant: boolean;
+  outdoor: boolean;
+  indoor: boolean;
+  parking: boolean;
+  lights: boolean;
+  turf: boolean;
   imageUrl: string;
-  infoUrl: string;
-  restaurant?: boolean;
-  outdoor?: boolean;
-  indoor?: boolean;
-  parking?: boolean;
-  lights?: boolean;
-  turf?: boolean;
-  moreInfo?: PitchInformation;
-};
+  moreInfo: {
+    oneHourSessionPrice: string;
+    twoHourSessionPrice?: string;
+    website: string;
+  };
+  reviews: Review[];
+}
 
 export type PitchInformation = {
   oneHourSessionPrice?: string;
   twoHourSessionPrice?: string;
+  website: string;
 };
 
 export type Filters = {
@@ -43,3 +58,9 @@ export type DropDownFiltersProps = {
   filterLocation: string;
   setFilterLocation: React.Dispatch<React.SetStateAction<string>>;
 };
+
+export interface PitchTag {
+  key: string;
+  label: string;
+  className: string;
+}
